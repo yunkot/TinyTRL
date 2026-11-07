@@ -237,7 +237,7 @@ String String::Wrap(char const* const string, Length length)
       if (length == 0)
         length = utility::calculateLength(string);
 
-      if (length <= ShortCapacity)
+      if (length <= ShortCapacity - NullLength)
       { // The provided string qualifies as a short string, so does not require wrapping.
         // Note: no need to copy null character as string should be pre-filled with zeros anyway.
         ::memcpy(res._bytes, string, static_cast<size_t>(length));
@@ -1496,6 +1496,8 @@ WideString& WideString::operator = (WideString const& source)
   }
   else
   { // Copy wrapped pointers from source string.
+    if (!wrapped())
+      ::free(_chars); // Release owned storage before re-pointing to the wrapped buffer.
     _chars = source._chars;
     _length = source._length;
   }
@@ -1636,7 +1638,7 @@ void WideString::pollute()
 
 void WideString::clear()
 {
-  if (wrapped())
+  if (!wrapped())
     ::free(_chars);
   _chars = nullptr;
   _length = 0;

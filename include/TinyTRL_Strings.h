@@ -22,7 +22,7 @@ namespace trl {
 class WideString;
 
 /// String class that handles ASCII or UTF8-encoded strings with Short String Optimization that can store
-/// up to 23 characters on 64-bit platforms and up to 11 characters on 32-bit platforms. This implementation
+/// up to 22 characters on 64-bit platforms and up to 10 characters on 32-bit platforms. This implementation
 /// always appends null terminating character to the end of string, ensuring that \c String::data() always
 /// points to a null-terminated string.
 class String

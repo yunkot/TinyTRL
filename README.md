@@ -15,10 +15,17 @@ The following templates, classes and functions are provided:
 * Basic mathematical (e.g. min, max) and utility (e.g. swap) functions.
 * Basic timing functions.
 
+Documentation:
+* [Getting Started](docs/Getting_Started.md) — how to integrate TinyTRL into a project.
+* [Containers](docs/Containers.md) — `Array`, `FlatMap` and `FlatSet`.
+* [Strings](docs/Strings.md) — `String` and `WideString`.
+* [Streams](docs/Streams.md) — `FileStream` and `MemoryStream`.
+* [Error Handling](docs/Error_Handling.md) — the pollute-bit error model.
+
 The library has the following objectives:
 * Reasonably work in "freestanding" applications (those that do not link standard C++ library).
 * Minimal dependency on standard C library (uses a small subset of functions such as *memcpy*, *memmove* and so on).
-* Does not need or use C++ exceptions (see Error Handling).
+* Does not need or use C++ exceptions (see [Error Handling](docs/Error_Handling.md)).
 * Can use native OS functions, e.g. from Windows or Posix APIs.
 * Reasonably small, compact and efficient.
 * Support modern OS, embedded systems and possibly some legacy OS (e.g. WinNT4) with some limitations.

@@ -15,7 +15,7 @@
 
 #include <math.h>
 
-namespace pxt {
+namespace trl {
 namespace math {
 
 float fmod(float const x, float const y) noexcept
@@ -152,4 +152,4 @@ size_t average(size_t value1, size_t value2) noexcept
 }
 
 } // namespace math
-} // namespace pxt
+} // namespace trl
